@@ -92,7 +92,7 @@ namespace Cliente
                 Console.WriteLine("RG: " + rg);
                 Console.WriteLine("CPF: " + cpf);
                 Console.WriteLine("Data de Nascimento: " + dataNascimento.ToShortDateString());
-                Console.WriteLine("Idade: " + CalcularIdade());
+                Console.WriteLine("Idade: " + CalcularIdade() + "anos");
                 Console.WriteLine("Limite: R$ " + AvaliaCredito());
             }
 
@@ -104,7 +104,7 @@ namespace Cliente
 
             public decimal AvaliaCredito()
             {
-                decimal limite = (salario * 0.3M) * (CalcularIdade() * 0.1M);
+                decimal limite = Decimal.Round((salario * 0.3M) * (CalcularIdade() * 0.1M), 2);
                 return limite;
             }
         }
